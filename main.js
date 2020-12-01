@@ -6,6 +6,17 @@ let myApp = new Vue({
   data:{
 
     dischi:[],
+    selected:"",
+  },
+
+  computed:{
+    filteredByGenre: function() {
+      searchInput = this.selected;
+      return this.dischi.filter(function(element){
+        return element.genre.toLowerCase().includes(searchInput.toLowerCase())
+      });
+
+    },
   },
 
   mounted: function(){
@@ -18,11 +29,6 @@ let myApp = new Vue({
 
         });
 
-
-
-
  },
-
-
 
 });

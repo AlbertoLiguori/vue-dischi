@@ -20,22 +20,28 @@
             </div>
         </header>
 
-        <ul id="root" class="cds-container container">
+        <div id="root">
 
-            <!-- Disco ad esempio -->
+              <select v-model="selected" class="" name="">
 
+                      <option value="rock">Rock</option>
+                      <option value="pop">Pop</option>
+                      <option value="metal">Metal</option>
 
+              </select>
 
-                <li class="cd" v-for="disc in dischi">
-                      <img :src="disc.poster" alt="">
-                      <h3>{{disc.title}}</h3>
-                      <span class="author">{{disc.author}}</span>
-                      <span class="year">{{disc.year}}</span>
-                </li>
+              <ul class="cds-container container">
 
+                      <li class="cd" v-for="disc in filteredByGenre">
+                            <img :src="disc.poster" alt="">
+                            <h3>{{disc.title}}</h3>
+                            <span class="author">{{disc.author}}</span>
+                            <span class="year">{{disc.year}}</span>
+                      </li>
 
+              </ul>
 
-        </ul>
+        </div>
 
 
         <script src="main.js" charset="utf-8"></script>
